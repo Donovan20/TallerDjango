@@ -1,0 +1,47 @@
+{% extends 'base/index.html' %}
+
+{% load staticfiles %}
+
+{% block extracss %}
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style_especial.css' %}"> -->
+{% endblock%}
+{% block content %}
+	<div class="container-fluid mt-3">
+		<table class="table table-borderless">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido</th>
+					<th scope="col">fechaHBD</th>
+					<th scope="col">No Hijos</th>
+					<th scope="col">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for cliente in object_list %}
+				<tr>
+					<th scope="row">{{cliente.id}}</th>
+					<td>{{cliente.nombre}}</td>
+					<td>{{cliente.apellidos}}</td>
+					<td>{{cliente.fechaHBD}}</td>
+					<td>{{cliente.numHijos}}</td>
+					<td>
+						<a href="{% url 'clientes:editarRegistro' cliente.id %}" class="btn">Editar</a>
+						<a href="{% url 'clientes:eliminarRegistro' cliente.id %}" class="btn">Borrar</a>
+					</td>
+				{% empty %}
+					<td span="6">No hay cliente</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="container">
+		
+		<a href="{% url 'clientes:nuevoRegistro' %}" class="btn">Nuevo Registro</a>
+
+	</div>
+
+	<!-- {% include 'base/informacionAdicional.html' %} -->
+{% endblock %}

@@ -25,7 +25,7 @@ SECRET_KEY = '^fbq)+6ewws(-g^6dqj%vad!_8a904e+nsjrood2)0!q4myg)5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lomnbda.pythonanywhere.com']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'proyecto1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prueba',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'Lomnbda$prueba',
+        'USER': 'Lomnbda',
+        'PASSWORD': 'mariscal412',
+        'HOST': 'Lomnbda.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
